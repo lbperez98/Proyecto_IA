@@ -19,7 +19,7 @@ https://templatemo.com/tm-549-business-oriented
 
 -->
 <body>
-    <div id="parallax-1" class="parallax-window" data-parallax="scroll" data-image-src="img/plant-identification.jpg">
+    <div id="parallax-1" class="parallax-window" data-parallax="scroll" data-image-src="img/plant-identification2.jpg">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -52,9 +52,9 @@ https://templatemo.com/tm-549-business-oriented
                                 <li class="nav-item">
                                     <a class="nav-link tm-nav-link" href="about.html">Acerca de</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link tm-nav-link" href="contact.html">Contacto</a>
-                                </li>
+                                </li> -->
                             </ul>                        
                         </div>                        
                     </nav>                    
@@ -63,7 +63,7 @@ https://templatemo.com/tm-549-business-oriented
         </div>
     </div>
 
-    <div class="container-fluid mt-7">
+    <div class="container-fluid mt-5">
         <div class="row mb-6">
             <div class="col-lg-7 mb-lg-0 mb-5 pr-lg-5">
                 <section class="mb-10">
@@ -85,66 +85,27 @@ https://templatemo.com/tm-549-business-oriented
                         ¡Comienza el proceso de Predicción ingresando una imagen!
                     </p>
                     <div class="custom-file">
-                        <input type="file"  accept="image/*" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" accept="image/*" class="custom-file-input" id="exampleInputFile" onChange="img_pathUrl(this);">
                         <label class="custom-file-label" for="exampleInputFile">Seleccione Imagen</label>
                       </div>
                     <br><br>
-                    <button type="submit" class="btn btn-primary rounded-0 d-block mx-auto">Obtener Información</button>
+                    <button type="submit" class="btn btn-primary rounded-0 d-block mx-auto" onclick="getInformacion()">Obtener Información</button>
                     
                 </section>
             </div>
             <div class="col-lg-5">
-                <img src="img/services-1.jpg" alt="Image" class="img-fluid">
-                <div class="tm-bg-gray-dark tm-box-2">
-                    <h4 class="tm-text-primary tm-h3 mb-4">Fusce sollicitudin arcu et tortor</h4>
-                    <p class="mb-5">Cras rhoncus tempor consequat. Donec convallis orci id scelerisque convallis. Suspendisse varius sapien mauris.</p>
-                    <p class="mb-5">Quisque accumsan lorem sed bibendum vehicula. Aenean gravida, nunc ac bibendum bibendum.</p>
-                    <p>Donec convallis orci id scelerisque convallis. Suspendisse varius sapien mauris. Proin accumsan.</p>
-                </div>
+               <div id="img-preview" class="img-fluid" >
+
+               </div>
+
+               <div id="divInformacion">
+                   
+               </div>
+              
             </div>
         </div>
     </div>
-    <!--div id="parallax-3" class="parallax-window parallax-window-2" data-parallax="scroll"
-        data-image-src="img/biz-oriented-footer-2.jpg">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="tm-overlay tm-bg-black-transparent p-5 ml-auto mr-0">
-                        <p class="mb-0 text-white">This is a parallax image background section. Text section box has 50% alpha on black color. Phasellus interdum lobortis ultrices. Cras nulla nulla, fermentum vel ligula in, mollis imperdiet ipsum.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div-->
 
-    <!--div class="container-fluid mt-7 mb-6">
-        <div class="row">
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-cloud-sun fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-hiking fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-tree fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 px-xl-4 px-3">
-                <div class="tm-box-3 tm-bg-gray">
-                    <div class="text-center"><i class="fas fa-campground fa-3x mb-8 mt-4"></i></div>
-                    <p>Nam nulla purus, lobortis ac euismod non, tincidunt eget velit. Nullam bibendum tortor id consectetur auctor.</p>
-                </div>
-            </div>
-        </div>
-    </div-->
     <footer class="container-fluid">
         <div class="row">
             <p class="col-lg-9 col-md-8 mb-5 mb-md-0">
@@ -160,11 +121,14 @@ https://templatemo.com/tm-549-business-oriented
     <script src="js/bootstrap.min.js"></script>
     <script src="js/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
     <script src="js/tooplate-script.js"></script>
+    <script src="js/main.js"></script>
     <script>
         $(document).ready(function () {
             $('#parallax-1').parallax({ imageSrc: 'img/biz-oriented-header.jpg' });
             $('#parallax-3').parallax({ imageSrc: 'img/biz-oriented-footer-2.jpg' });
         });
+            
+
     </script>
 </body>
 </html>

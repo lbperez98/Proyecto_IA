@@ -420,3 +420,15 @@ select:not([multiple]) {
         margin-bottom: 30px;
     }
 }
+
+
+#img-preview {
+    display: none;
+    width: 155px;
+    margin-bottom: 20px;
+  }
+  #img-preview img {
+    width: 200px;
+    height: auto;
+    display: block;
+  }
