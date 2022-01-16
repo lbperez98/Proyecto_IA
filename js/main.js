@@ -25,12 +25,27 @@ imgPreview.innerHTML = '<img src="' + this.result + '" />';
 
 function getInformacion(){
 
-    divInformacion.innerHTML =  `<div class="tm-bg-gray-dark tm-box-2">
-                                    <h4 class="tm-text-primary tm-h3 mb-4">Resultado</h4>
-                                    <p class="mb-5"><strong>Nombre:<strong></p>
-                                    <p class="mb-5"><strong>Nombre Cientifico:<strong></p>
-                                    <p class="mb-5"><strong>Descripción:<strong></p>
+    const url="http://127.0.0.1:8000/plantas/get_Planta/?nombrePlanta=Diente+de+Leon";
+    fetch(url)
+    .then((response) => response.json())
+    .then((responseData) => {
+        console.log(responseData);
+        var planta= responseData[0]
+        divInformacion.innerHTML =  `<div class="tm-bg-gray-dark tm-box-2">
+                                        <h4 class="tm-text-primary tm-h3 mb-4">Resultado:</h4>
+                                        <p><strong>Nombre:</strong></p>
+                                        <p>${planta.nombre}</p>
+                                        <p><strong>Nombre Cientifico:</strong><p>${planta.nombreCientifico}</p></p>
+                                        <p><strong>Descripción:</strong><p class="text-justify">${planta.descripcion}</p></p>
+                                        <p><strong>Cuidados:<strong></p>
 
-                                </div>`;
+                                    </div>`;
+  
+    })
+
+
+
     
 }
+
+

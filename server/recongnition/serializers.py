@@ -10,7 +10,8 @@ class PlantaSerializer(serializers.ModelSerializer):
             'id',
             'nombre',
             'nombreCientifico',
-            'descripcion'
+            'descripcion',
+            'cuidados'
         ]
 
         def create(self, data):
@@ -18,7 +19,8 @@ class PlantaSerializer(serializers.ModelSerializer):
             newPlanta = models.PlantaModel.objects.create(
                 nombre = data.get("nombre"),
                 nombreCientifico  = data.get("nombreCientifico"),
-                descripcion = data.get("descripcion")
+                descripcion = data.get("descripcion"),
+                cuidados = data.get("cuidados") 
             )
 
             return newPlanta
